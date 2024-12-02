@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Coupons</title>
+    <link rel="stylesheet" href="css.css">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 5px #333;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .coupon-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap */
+            justify-content: center;
+            gap: 20px;
+        }
+        .coupon {
+            border: 3px dashed #ffd700;
+            border-radius: 15px;
+            padding: 15px;
+            width: 23%; /* 4 coupons per row, adjust width accordingly */
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 4px 4px 10px #b5651d;
+            text-align: left;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.2s;
+        }
+        .coupon img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .coupon:hover {
+            transform: scale(1.05);
+        }
+        .coupon h3 {
+            color: #e85d04;
+            text-shadow: 1px 1px 3px #000;
+        }
+        .coupon p {
+            font-size: 1em;
+            color: #333;
+        }
+
+        /* Ribbon Tags */
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: -25px;
+            background: #e63946;
+            color: #fff;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            text-transform: none;
+            font-weight: bold;
+            transform: rotate(-45deg);
+            box-shadow: 2px 2px 5px #333;
+            z-index: 10;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 80%;
+        }
+        .modal img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .modal h3 {
+            margin-top: 10px;
+            color: #e85d04;
+        }
+        .modal button {
+            margin-top: 15px;
+            background: #e63946;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal button:hover {
+            background: #d62828;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎉 Birthday Coupon Book 🎉</h1>
+        <p>To my favorite person, here’s a collection of fun and silly coupons made just for you. Redeem them anytime for an unforgettable experience! ❤️</p>
+        <hr>
+    </header>
+
+    <main>
+        <h2>Your Coupons</h2>
+        <div id="coupon-container" class="coupon-container">
+            <!-- Coupon 1 -->
+            <div class="coupon" onclick="showCoupon(1)">
+                <span class="tag">Pet Pampering</span>
+                <img src="https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cg=auto%2Ch=450%2Cq=85%2Cw=1096/wp-content/uploads/beagle-day-scaled.jpg" alt="Doggy Spa">
+                <h3>🐾 Doggy Spa Day</h3>
+                <p>Grooming & long walks for your pups!</p>
+            </div>
+            <!-- Coupon 2 -->
+            <div class="coupon" onclick="showCoupon(2)">
+                <span class="tag">Payback</span>
+                <img src="https://via.placeholder.com/320x200.png?text=You+Paid+Too+Much" alt="Payback Meal">
+                <h3>🍽 I’ll Pay For Once!</h3>
+                <p>A meal where I pay—no backsies!</p>
+            </div>
+            <!-- Coupon 3 -->
+            <div class="coupon" onclick="showCoupon(3)">
+                <span class="tag">Binge Buddy</span>
+                <img src="https://via.placeholder.com/320x200.png?text=Cheat+Day" alt="Cheat Day">
+                <h3>🍕 Unlimited Cheat Day</h3>
+                <p>Snacks & laughter guaranteed!</p>
+            </div>
+            <!-- Coupon 4 -->
+            <div class="coupon" onclick="showCoupon(4)">
+                <span class="tag">Horror Night</span>
+                <img src="https://via.placeholder.com/320x200.png?text=Horror+Marathon" alt="Horror Marathon">
+                <h3>🎥 Scary Movie Marathon</h3>
+                <p>Popcorn & pillows for screaming.</p>
+            </div>
+            <!-- Coupon 5 (this will appear in a new line) -->
+            <div class="coupon" onclick="showCoupon(5)">
+                <span class="tag">Sleepover</span>
+                <img src="https://via.placeholder.com/320x200.png?text=Sleepover+Fun" alt="Sleepover Fun">
+                <h3>🎉 Cozy Sleepover Night</h3>
+                <p>All the blankets, all the snacks, all night long!</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <img id="modal-img" src="" alt="Coupon Image">
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+            <button id="redeem-btn" onclick="redeemCoupon()">Redeem Now</button>
+        </div>
+    </div>
+
+    <script src="java.js"></script>
+</body>
+</html>
