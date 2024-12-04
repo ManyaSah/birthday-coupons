@@ -11,7 +11,7 @@ const coupons = [
         id: 2,
         title: "🍕 Cheat Day Feast",
         desc: "Binge-eating marathon! I’ll join you guilt-free for every snack and bite!",
-        img: "C:/Users/arpit/Desktop/All Manya/internship/bhabhi/food.jpg",
+        img: "food.jpg",
         tag: "Feast",
         redeemed: false
     },
@@ -19,7 +19,7 @@ const coupons = [
         id: 3,
         title: "🎥 Horror Movie Marathon",
         desc: "Blankets, popcorn, and jumpscares! Let’s face the ghosts together!",
-        img: "C:/Users/arpit/Desktop/All Manya/internship/bhabhi/horror.jpg",
+        img: "horror.jpg",
         tag: "Scare Night",
         redeemed: false
     },
@@ -27,7 +27,7 @@ const coupons = [
         id: 4,
         title: "💤 Sleepover Shenanigans",
         desc: "An unforgettable night of gossip, snacks, and laughter—no sleep allowed!",
-        img: "C:/Users/arpit/Desktop/All Manya/internship/bhabhi/sleepover.jpg",
+        img: "sleepover.jpg",
         tag: "Sleepover",
         redeemed: false
     },
@@ -35,7 +35,7 @@ const coupons = [
         id: 5,
         title: "🛍️ Shopping Sidekick",
         desc: "I’ll carry your bags, stand in queues, and help you shop till you drop!",
-        img: "C:/Users/arpit/Desktop/All Manya/internship/bhabhi/Shopping.jpg",
+        img: "Shopping.jpg",
         tag: "Shopping Spree",
         redeemed: false
     }
