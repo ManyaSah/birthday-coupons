@@ -27,7 +27,7 @@ const coupons = [
         id: 4,
         title: "💤 Sleepover Shenanigans",
         desc: "An unforgettable night of gossip, snacks, and laughter—no sleep allowed!",
-        img: "sleepover.jpg",
+        img: "Sleepover.jpg",
         tag: "Sleepover",
         redeemed: false
     },
