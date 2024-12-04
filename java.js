@@ -3,7 +3,7 @@ const coupons = [
         id: 1,
         title: "🐶 Puppy Play Date",
         desc: "A fun day with your dogs! Walks, treats, and belly rubs—all handled by me!",
-        img: "C:/Users/arpit/Desktop/All Manya/internship/bhabhi/dogs.jpeg",
+        img: "dogs.jpeg",
         tag: "Play Date",
         redeemed: false
     },
